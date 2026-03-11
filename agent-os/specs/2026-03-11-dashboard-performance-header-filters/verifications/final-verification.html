@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verification Report: Dashboard &amp; Performance Header Filters</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 48rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #111; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.15rem; margin-top: 1.5rem; }
+    .meta { color: #555; font-size: 0.9rem; }
+    .pass { color: #0a0; }
+    ul { padding-left: 1.25rem; }
+    code { background: #f4f4f4; padding: 0.1em 0.35em; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+<h1>Verification Report: Dashboard &amp; Performance Header Filters</h1>
+
+<p class="meta">
+  <strong>Spec:</strong> <code>2026-03-11-dashboard-performance-header-filters</code><br />
+  <strong>Date:</strong> 2026-03-11<br />
+  <strong>Verifier:</strong> implementation-verifier<br />
+  <strong>Status:</strong> <span class="pass">✅ Passed</span>
+</p>
+
+<hr />
+
+<h2>Executive Summary</h2>
+<p>
+  Task Groups 1–3 are implemented: shared <code>PageHeader</code> and <code>TimeRangeFilter</code> (Year default, desktop segmented / mobile Select) are on Dashboard and Performance. Performance API date range line preserved; no API changes. Optional Task Group 4 reviewed—existing tests cover critical paths; no extra tests required. Full Vitest suite: 106 tests passing.
+</p>
+
+<h2>1. Tasks Verification</h2>
+<p><strong>Status:</strong> <span class="pass">✅ All Complete</span></p>
+
+<h3>Completed Tasks</h3>
+<ul>
+  <li>[x] Task Group 1: Shared PageHeader and Time Range Control (1.1–1.7)</li>
+  <li>[x] Task Group 2: Dashboard Page (2.1–2.3)</li>
+  <li>[x] Task Group 3: Performance Page (3.1–3.3)</li>
+  <li>[x] Task Group 4: Test Review — reviewed; no critical gaps</li>
+</ul>
+
+<h3>Incomplete or Issues</h3>
+<p>None.</p>
+
+<h2>2. Documentation Verification</h2>
+<p><strong>Status:</strong> ✅ Complete</p>
+<ul>
+  <li>Task Group 1: <code>implementation/1-page-header-time-range-implementation.md</code></li>
+  <li>Task Groups 2–3: <code>implementation/2-3-dashboard-performance-integration.md</code></li>
+</ul>
+<p><strong>Missing Documentation:</strong> None.</p>
+
+<h2>3. Roadmap Updates</h2>
+<p><strong>Status:</strong> ⚠️ No Updates Applied</p>
+<p>
+  Roadmap item 4 (<em>Dashboard and performance data</em>) is full backend wiring to real revenue/orders. This spec delivered UX-only header filters and in-memory state only—intentionally before schema/data. Item 4 remains unchecked until data wiring is done.
+</p>
+
+<h2>4. Test Suite Results</h2>
+<p><strong>Status:</strong> <span class="pass">✅ All Passing</span></p>
+<ul>
+  <li><strong>Total Tests:</strong> 106</li>
+  <li><strong>Passing:</strong> 106</li>
+  <li><strong>Failing:</strong> 0</li>
+  <li><strong>Errors:</strong> 0</li>
+</ul>
+<p><strong>Failed Tests:</strong> None — all tests passing.</p>
+<p><strong>Notes:</strong> Some stderr warnings (Recharts container size in jsdom; act() warnings in auth tests) are pre-existing and do not fail tests.</p>
+
+</body>
+</html>

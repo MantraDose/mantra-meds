@@ -2,16 +2,17 @@ import { DollarSign, ShoppingCart, TrendingUp, Package } from "lucide-react"
 import { MetricCard } from "@/components/charts/metric-card"
 import { RevenueChart } from "@/components/charts/revenue-chart"
 import { TopProductsTable } from "@/components/tables/top-products-table"
+import { PageHeader } from "@/components/layout/page-header"
+import { TimeRangeFilter } from "@/components/layout/time-range-filter"
 
 export default function DashboardPage() {
   return (
     <div className="flex flex-col gap-8">
-      <div>
-        <h1 className="text-2xl font-bold tracking-tight text-foreground">Dashboard</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          High-level performance snapshot for MantraDose
-        </p>
-      </div>
+      <PageHeader
+        title="Dashboard"
+        description="High-level performance snapshot for MantraDose"
+        actions={<TimeRangeFilter />}
+      />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <MetricCard

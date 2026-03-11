@@ -7,6 +7,8 @@ import { ChannelChart } from "@/components/charts/channel-chart"
 import type { ChannelChartDataPoint } from "@/components/charts/channel-chart"
 import { Button } from "@/components/ui/button"
 import { Skeleton } from "@/components/ui/skeleton"
+import { PageHeader } from "@/components/layout/page-header"
+import { TimeRangeFilter } from "@/components/layout/time-range-filter"
 
 interface PerformanceSummary {
   totalRevenue: number
@@ -71,19 +73,17 @@ export default function PerformancePage() {
 
   return (
     <div className="flex flex-col gap-8">
-      <div>
-        <h1 className="text-2xl font-bold tracking-tight text-foreground">
-          Performance
-        </h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Deep-dive into revenue, orders, and channel mix
-        </p>
+      <PageHeader
+        title="Performance"
+        description="Deep-dive into revenue, orders, and channel mix"
+        actions={<TimeRangeFilter />}
+      >
         {!loading && !error && data?.dateRange && (
-          <p className="mt-1 text-xs text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             {formatDateRange(data.dateRange)}
           </p>
         )}
-      </div>
+      </PageHeader>
 
       {error && (
         <div className="rounded-lg border border-border bg-card p-4 text-center">
